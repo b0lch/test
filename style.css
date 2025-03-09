@@ -5,7 +5,7 @@ body {
     padding: 0;
     background: url('https://static.nationalgeographic.de/files/styles/image_3200/public/fuchskinder-in-deutschland.webp?w=1600&h=900') no-repeat center center fixed;
     background-size: cover;
-    color: white;
+    color: blue;
 }
 
 /* Popup bleibt dauerhaft sichtbar */
