@@ -12,6 +12,7 @@
         border-radius: 10%;
         font-size: 16px;
         cursor: pointer;
+        text-transform: uppercase; /* Macht den Text im Button in Großbuchstaben */
       }
       body {
         font-family: Arial, sans-serif;
@@ -35,10 +36,12 @@
       }
       h1 {
         color: #333;
+        text-transform: uppercase; /* H1 Text in Großbuchstaben */
       }
       p {
         font-size: 16px;
         color: #555;
+        text-transform: uppercase; /* Paragraph Text in Großbuchstaben */
       }
       footer {
         text-align: center;
@@ -49,75 +52,75 @@
       }
       .caption {
         color: #555;
+        text-transform: uppercase; /* Caption Text in Großbuchstaben */
       }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Screentime bypass</h1>
+    <h1>SCREENTIME BYPASS</h1>
 </header>
 
 <div class="container">
-    <h2>How to Add This Website to Your Home Screen</h2>
-    <p>Follow the simple steps below to add this website to your home screen to use the bypass:</p>
+    <h2>HOW TO ADD THIS WEBSITE TO YOUR HOME SCREEN</h2>
+    <p>FOLLOW THE SIMPLE STEPS BELOW TO ADD THIS WEBSITE TO YOUR HOME SCREEN TO USE THE BYPASS:</p>
 
     <ol>
-        <li>Tap the share button.</li>
-        <li>Select the "Add to Home Screen" option from the share menu.</li>
-        <li>The website should now appear as an app icon on your home screen.</li>
+        <li>TAP THE SHARE BUTTON.</li>
+        <li>SELECT THE "ADD TO HOME SCREEN" OPTION FROM THE SHARE MENU.</li>
+        <li>THE WEBSITE SHOULD NOW APPEAR AS AN APP ICON ON YOUR HOME SCREEN.</li>
     </ol>
 
-    <button id="shareButton">Add to Home Screen</button>
+    <button id="shareButton">ADD TO HOME SCREEN</button>
 
 </div>
 
 <footer>
-    <p>&copy; 2025 Molch Site. All rights reserved.</p>
+    <p>&copy; 2025 MOLCH SITE. ALL RIGHTS RESERVED.</p>
     <figure>
         <figcaption>
-          <span class="caption">credits: Screentimebypass, B0lch, ChatGPT</span>
+          <span class="caption">CREDITS: SCREENTIMEBYPASS, B0LCH, CHATGPT</span>
         </figcaption>
       </figure>
 </footer>
 
 <script>
-    // Function to handle the share button click
+    // Funktion, um den Klick auf den Share-Button zu behandeln
     function handleAddToHomeScreenClick() {
-        // Try to trigger the install prompt
-        let deferredPrompt; // Initialize the deferred prompt variable
+        let deferredPrompt; // Initialisiere die deferredPrompt-Variable
 
-        // Check if beforeinstallprompt event is available
+        // Prüfen, ob der beforeinstallprompt-Event verfügbar ist
         window.addEventListener("beforeinstallprompt", (e) => {
             e.preventDefault();
-            deferredPrompt = e; // Store the event for later use
+            deferredPrompt = e; // Speichere das Event für später
             console.log('beforeinstallprompt event is available');
         });
 
         if (deferredPrompt) {
-            // Show the install prompt
+            // Zeige den Installationsprompt an
             deferredPrompt.prompt();
 
-            // Wait for the user to respond to the prompt
+            // Warte auf die Antwort des Benutzers
             deferredPrompt.userChoice
                 .then((choiceResult) => {
                     if (choiceResult.outcome === "accepted") {
-                        console.log("User accepted the install prompt");
+                        console.log("USER ACCEPTED THE INSTALL PROMPT");
                     } else {
-                        console.log("User dismissed the install prompt");
+                        console.log("USER DISMISSED THE INSTALL PROMPT");
                     }
                     deferredPrompt = null;
                 });
         } else {
-            // If the install prompt is not available, show instructions for manual installation
-            alert("The install prompt is not available on this device. Please follow these steps to add the app to your home screen:\n\n" +
-                  "1. Open the Share menu in your browser.\n" +
-                  "2. Tap 'Add to Home Screen'.\n" +
-                  "3. The website should appear as an app icon on your home screen.");
+            // Wenn der Installationsprompt nicht verfügbar ist, zeige die Anleitung an
+            alert("THE INSTALL PROMPT IS NOT AVAILABLE ON THIS DEVICE. PLEASE FOLLOW THESE STEPS TO ADD THE APP TO YOUR HOME SCREEN:\n\n" +
+                  "1. OPEN THE SHARE MENU IN YOUR BROWSER.\n" +
+                  "2. TAP 'ADD TO HOME SCREEN'.\n" +
+                  "3. THE WEBSITE SHOULD APPEAR AS AN APP ICON ON YOUR HOME SCREEN.");
         }
     }
 
-    // Add click event listener to the button
+    // Füge den Klick-Event-Listener zum Button hinzu
     document.getElementById("shareButton").addEventListener("click", handleAddToHomeScreenClick);
 </script>
 
