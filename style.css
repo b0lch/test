@@ -1,10 +1,14 @@
+/* Hintergrund mit Bild */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: url('background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
 }
 
+/* Popup bleibt dauerhaft sichtbar */
 #popup {
     position: fixed;
     bottom: 15px;
@@ -19,10 +23,9 @@ body {
     text-align: center;
     font-size: 16px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 0.5s ease-in-out;
-    display: none;
 }
 
+/* Icon-Stil */
 .icon {
     background: white;
     color: black;
@@ -33,15 +36,11 @@ body {
     margin: 0 5px;
 }
 
+/* Pfeil-Animation */
 .arrow {
     font-size: 24px;
     margin-top: 10px;
     animation: bounce 1s infinite;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateX(-50%) translateY(20px); }
-    to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
 @keyframes bounce {
