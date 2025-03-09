@@ -1,32 +1,50 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
 
 #popup {
     position: fixed;
-    bottom: 20px;
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
     max-width: 400px;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.85);
     color: white;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 12px;
     text-align: center;
+    font-size: 16px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s ease-in-out;
     display: none;
 }
 
-button {
-    margin-top: 10px;
-    padding: 8px 15px;
-    background: #007bff;
-    color: white;
-    border: none;
+.icon {
+    background: white;
+    color: black;
+    padding: 4px 8px;
     border-radius: 5px;
-    cursor: pointer;
+    font-size: 18px;
+    display: inline-block;
+    margin: 0 5px;
 }
 
-button:hover {
-    background: #0056b3;
+.arrow {
+    font-size: 24px;
+    margin-top: 10px;
+    animation: bounce 1s infinite;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(5px); }
 }
