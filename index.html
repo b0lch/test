@@ -1,128 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Screentime bypass</title>
-    <style>
-      button {
-        width: 200px;
-        height: 100px;
-        background-color: aqua;
-        border-radius: 10%;
-        font-size: 16px;
-        cursor: pointer;
-        text-transform: uppercase; /* Macht den Text im Button in Großbuchstaben */
-      }
-      body {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-      }
-      header {
-        background-color: #333;
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-      }
-      .container {
-        max-width: 800px;
-        margin: 20px auto;
-        padding: 20px;
-        background-color: white;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-      h1 {
-        color: #333;
-        text-transform: uppercase; /* H1 Text in Großbuchstaben */
-      }
-      p {
-        font-size: 16px;
-        color: #555;
-        text-transform: uppercase; /* Paragraph Text in Großbuchstaben */
-      }
-      footer {
-        text-align: center;
-        padding: 10px;
-        background-color: #333;
-        color: white;
-        margin-top: 20px;
-      }
-      .caption {
-        color: #555;
-        text-transform: uppercase; /* Caption Text in Großbuchstaben */
-      }
-    </style>
+    <title>Popup Fenster</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
-    <h1>SCREENTIME BYPASS</h1>
-</header>
+    <div id="popup">
+        <p>Tippe das Symbol <span class="share-icon">🔗</span> unten auf dem Bildschirm an,  
+        scrolle nach unten zu <strong>„Zum Home-Bildschirm“</strong> und tippe <strong>„Hinzufügen“</strong> an.</p>
+        <button id="closePopup">OK</button>
+    </div>
 
-<div class="container">
-    <h2>HOW TO ADD THIS WEBSITE TO YOUR HOME SCREEN</h2>
-    <p>FOLLOW THE SIMPLE STEPS BELOW TO ADD THIS WEBSITE TO YOUR HOME SCREEN TO USE THE BYPASS:</p>
-
-    <ol>
-        <li>TAP THE SHARE BUTTON.</li>
-        <li>SELECT THE "ADD TO HOME SCREEN" OPTION FROM THE SHARE MENU.</li>
-        <li>THE WEBSITE SHOULD NOW APPEAR AS AN APP ICON ON YOUR HOME SCREEN.</li>
-    </ol>
-
-    <button id="shareButton">ADD TO HOME SCREEN</button>
-
-</div>
-
-<footer>
-    <p>&copy; 2025 MOLCH SITE. ALL RIGHTS RESERVED.</p>
-    <figure>
-        <figcaption>
-          <span class="caption">CREDITS: SCREENTIMEBYPASS, B0LCH, CHATGPT</span>
-        </figcaption>
-      </figure>
-</footer>
-
-<script>
-    // Funktion, um den Klick auf den Share-Button zu behandeln
-    function handleAddToHomeScreenClick() {
-        let deferredPrompt; // Initialisiere die deferredPrompt-Variable
-
-        // Prüfen, ob der beforeinstallprompt-Event verfügbar ist
-        window.addEventListener("beforeinstallprompt", (e) => {
-            e.preventDefault();
-            deferredPrompt = e; // Speichere das Event für später
-            console.log('beforeinstallprompt event is available');
-        });
-
-        if (deferredPrompt) {
-            // Zeige den Installationsprompt an
-            deferredPrompt.prompt();
-
-            // Warte auf die Antwort des Benutzers
-            deferredPrompt.userChoice
-                .then((choiceResult) => {
-                    if (choiceResult.outcome === "accepted") {
-                        console.log("USER ACCEPTED THE INSTALL PROMPT");
-                    } else {
-                        console.log("USER DISMISSED THE INSTALL PROMPT");
-                    }
-                    deferredPrompt = null;
-                });
-        } else {
-            // Wenn der Installationsprompt nicht verfügbar ist, zeige die Anleitung an
-            alert("THE INSTALL PROMPT IS NOT AVAILABLE ON THIS DEVICE. PLEASE FOLLOW THESE STEPS TO ADD THE APP TO YOUR HOME SCREEN:\n\n" +
-                  "1. OPEN THE SHARE MENU IN YOUR BROWSER.\n" +
-                  "2. TAP 'ADD TO HOME SCREEN'.\n" +
-                  "3. THE WEBSITE SHOULD APPEAR AS AN APP ICON ON YOUR HOME SCREEN.");
-        }
-    }
-
-    // Füge den Klick-Event-Listener zum Button hinzu
-    document.getElementById("shareButton").addEventListener("click", handleAddToHomeScreenClick);
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
