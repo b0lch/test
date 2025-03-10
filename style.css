@@ -12,7 +12,7 @@ body {
     transform: translateX(-50%);
     width: 90%;
     max-width: 400px;
-    background: rgba(0, 0, 0, 0.85);
+    background: aqua;
     color: white;
     padding: 15px;
     border-radius: 12px;
@@ -25,7 +25,7 @@ body {
 
 .icon {
     background: white;
-    color: black;
+    color: powderblue;
     padding: 4px 8px;
     border-radius: 5px;
     font-size: 18px;
