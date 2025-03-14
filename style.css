@@ -7,18 +7,18 @@ body {
 
 #mloch {
     position: fixed;
-    bottom: 15px;
+    bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
-    max-width: 400px;
+    max-width: 25rem;
     background: #FFFFFF;
-    color: white;
-    padding: 15px;
-    border-radius: 12px;
+    color: black;
+    padding: 1rem;
+    border-radius: 0.75rem;
     text-align: center;
-    font-size: 16px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    font-size: 2rem;
+    box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.3);
     animation: fadeIn 0.5s ease-in-out;
     display: block;
 }
@@ -26,25 +26,25 @@ body {
 .icon {
     background: white;
     color: powderblue;
-    padding: 4px 8px;
-    border-radius: 5px;
-    font-size: 18px;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.3125rem;
+    font-size: 1.125rem;
     display: inline-block;
-    margin: 0 5px;
+    margin: 0 0.3125rem;
 }
 
 .arrow {
-    font-size: 24px;
-    margin-top: 10px;
+    font-size: 1.5rem;
+    margin-top: 0.625rem;
     animation: bounce 1s infinite;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateX(-50%) translateY(20px); }
+    from { opacity: 0; transform: translateX(-50%) translateY(1.25rem); }
     to { opacity: 1; transform: translateX(-50%) translateY(0); }
 }
 
 @keyframes bounce {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(5px); }
+    50% { transform: translateY(0.3125rem); }
 }
