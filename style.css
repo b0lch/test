@@ -6,14 +6,13 @@ body {
 }
 
 #mloch {
-    background-color: #FFFFFF;
     position: fixed;
     bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
     max-width: 400px;
-    background: aqua;
+    background: #FFFFFF;
     color: white;
     padding: 15px;
     border-radius: 12px;
